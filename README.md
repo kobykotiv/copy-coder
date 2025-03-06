@@ -66,6 +66,7 @@ npm install
 Create a `.env` file in the root directory with:
 ```env
 GEMINI_API_KEY=your_api_key_here
+OPENAI_API_KEY=your_openai_api_key_here
 ```
 
 4. Run the development server:
@@ -83,6 +84,38 @@ Open [http://localhost:3000](http://localhost:3000) to view the application.
 4. Click "Generate prompt"
 5. Copy the generated prompt
 6. Use the quick access buttons to open your preferred AI coding tool
+
+## Docker
+
+To build and run the application using Docker, follow these steps:
+
+1. Build the Docker image:
+   ```bash
+   docker build -t copy-coder .
+   ```
+
+2. Run the Docker container:
+   ```bash
+   docker run -p 3000:3000 copy-coder
+   ```
+
+3. Open http://localhost:3000 to view the application.
+
+## Docker Compose
+
+To build and run the application using Docker Compose, follow these steps:
+
+1. Build and start the Docker containers:
+   ```bash
+   docker-compose up --build
+   ```
+
+2. Open http://localhost:3000 to view the application.
+
+3. To stop the Docker containers, run:
+   ```bash
+   docker-compose down
+   ```
 
 ## Contributing
 
