@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const OLLAMA_API_URL = 'https://api.ollama.com/v1';
+const OLLAMA_API_URL = 'https://localhost:11434';
 
 async function sendRequestToOllama(prompt) {
   try {
@@ -12,12 +12,7 @@ async function sendRequestToOllama(prompt) {
       {
         prompt: prompt,
       },
-      {
-        headers: {
-          'Authorization': `Bearer ${process.env.OLLAMA_API_KEY}`,
-          'Content-Type': 'application/json',
-        },
-      }
+
     );
     return response.data;
   } catch (error) {
