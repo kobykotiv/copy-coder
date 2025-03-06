@@ -1,6 +1,6 @@
 'use server'
 
-import { generatePrompt } from '@/lib/gemini'
+import { getEnhancedPrompt } from '@/lib/mediator'
 import { writeFile } from 'fs/promises'
 import { join } from 'path'
 import { v4 as uuidv4 } from 'uuid'
@@ -12,8 +12,8 @@ export async function generatePromptAction(base64Image: string, applicationType:
     const tempImagePath = join('/tmp', `${uuidv4()}.png`)
     await writeFile(tempImagePath, imageBuffer)
 
-    // Generate prompt from the image
-    const stream = await generatePrompt(tempImagePath, applicationType, temperature)
+    // Generate prompt from the image using the mediator
+    const stream = await getEnhancedPrompt(tempImagePath, applicationType, temperature)
     return stream
 
   } catch (error) {

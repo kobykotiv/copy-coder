@@ -67,6 +67,7 @@ npm install
 在根目录创建 `.env` 文件：
 ```env
 GEMINI_API_KEY=your_api_key_here
+OPENAI_API_KEY=your_openai_api_key_here
 ```
 
 4. 运行开发服务器：
@@ -84,6 +85,38 @@ npm run dev
 4. 点击"生成提示"
 5. 复制生成的提示
 6. 使用快速访问按钮打开你偏好的 AI 编程工具
+
+## Docker
+
+使用 Docker 构建和运行应用，按照以下步骤操作：
+
+1. 构建 Docker 镜像：
+   ```bash
+   docker build -t copy-coder .
+   ```
+
+2. 运行 Docker 容器：
+   ```bash
+   docker run -p 3000:3000 copy-coder
+   ```
+
+3. 打开 http://localhost:3000 查看应用。
+
+## Docker Compose
+
+使用 Docker Compose 构建和运行多容器应用，按照以下步骤操作：
+
+1. 构建并启动 Docker 容器：
+   ```bash
+   docker-compose up --build
+   ```
+
+2. 打开 http://localhost:3000 查看应用。
+
+3. 停止 Docker 容器，运行：
+   ```bash
+   docker-compose down
+   ```
 
 ## 贡献
 
